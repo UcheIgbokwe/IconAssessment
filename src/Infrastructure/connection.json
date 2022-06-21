@@ -1,0 +1,6 @@
+{
+    "ConnectionStrings": {
+        "DefaultConnectionString":"workstation id=idealfactoryDb.mssql.somee.com;packet size=4096;user id=idealfactory;pwd=wema-12345;data source=idealfactoryDb.mssql.somee.com;persist security info=False;initial catalog=idealfactoryDb"
+    },
+    "AllowedHosts": "*"
+}
