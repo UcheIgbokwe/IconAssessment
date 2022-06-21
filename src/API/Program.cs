@@ -6,6 +6,7 @@ using Application.Features.Commands;
 using FluentValidation;
 using Infrastructure;
 using Infrastructure.Helpers;
+using Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,8 +19,8 @@ var env = builder.Environment;
 
     services.AddCors(p => p.AddPolicy("CorsPolicy", builder => builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader()));
 
-    // services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase(builder.Configuration.GetSection("EntityFramework:databaseName").Value));
-    // services.AddScoped<DbContext, DataContext>();
+    services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase(builder.Configuration.GetSection("EntityFramework:databaseName").Value));
+    services.AddScoped<DbContext, DataContext>();
 
     services.AddControllers().AddNewtonsoftJson(opt =>
     {
@@ -47,16 +48,6 @@ var env = builder.Environment;
 }
 
 var app = builder.Build();
-
-//Configure Database Seed
-// using (var scope = app.Services.CreateScope())
-// {
-//     var services = scope.ServiceProvider;
-//     var context = services.GetRequiredService<DataContext>();
-//     var logger = services.GetService<ILogger<DataContextSeed>>();
-
-//     DataContextSeed.Initialize(services,logger);
-// }
 
 // Configure the HTTP request pipeline.
 app.UseSwagger();

@@ -15,6 +15,9 @@ namespace Domain.LogisticsDetails.Dimensions
 
         public Dimension(double width, double height, double depth)
         {
+            Width = width;
+            Height = height;
+            Depth = depth;
             CalculatedDimension = width * height * depth;
         }
 

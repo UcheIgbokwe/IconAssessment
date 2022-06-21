@@ -25,7 +25,7 @@ namespace API.Controllers
         /// <param name="command"></param>
         /// <returns></returns>
         [HttpPost("GetBestRate")]
-        [ProducesResponseType(typeof(PackageResponse), statusCode: 201)]
+        [ProducesResponseType(typeof(PackageResponse), statusCode: 200)]
         public async Task<IActionResult> GetBestRate([FromBody] GetPriceCommand command)
         {
             try
@@ -37,7 +37,7 @@ namespace API.Controllers
                     return NotFound();
                 }
 
-                return Created("",result);
+                return Ok(result);
             }
             catch (Exception ex)
             {
