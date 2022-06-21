@@ -1,5 +1,3 @@
-
-
 using Domain.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;

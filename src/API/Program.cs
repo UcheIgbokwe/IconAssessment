@@ -2,6 +2,8 @@ using System.Reflection;
 using API.Config.Extensions;
 using API.Middleware;
 using Application.Behaviours;
+using Application.Features.Commands;
+using FluentValidation;
 using Infrastructure;
 using Infrastructure.Helpers;
 using MediatR;
@@ -33,11 +35,11 @@ var env = builder.Environment;
     services.AddSwaggerDocumentation();
     services.AddAuthorizationServices(builder.Configuration);
     services.AddApplicationServices();
-    //services.AddInfrastructureServices();
+    services.AddInfrastructureServices();
 
-    // services.AddMediatR(typeof(GetGaragesQueryHandler).GetTypeInfo().Assembly);
-    // services.AddMediatR(typeof(GetGarageQueryHandler).GetTypeInfo().Assembly);
-    // services.AddMediatR(typeof(GetDoorQueryHandler).GetTypeInfo().Assembly);
+    services.AddMediatR(typeof(GetPriceCommandHandler).GetTypeInfo().Assembly);
+
+    services.AddValidatorsFromAssemblyContaining(typeof(GetPriceCommandHandler));
 
     services.AddMediatR(Assembly.GetExecutingAssembly());
     services.AddScoped(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
