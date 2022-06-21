@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  parkbee.api:
+    build:
+      context: .
+      dockerfile: src/API/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - "EntityFramework:databaseName=IconDatabase"
+    ports:
+      - "8000:80"
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    ports:
+      - "8080:80"    
