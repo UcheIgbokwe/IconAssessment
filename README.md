@@ -34,6 +34,8 @@ Due to minor setback, after clicking the submit button, manually enter the URL b
 ```
 http://localhost:8080/#/welcome
 ```
+  * Click the submit button to get token and automatically navigate to the Price Details page.
+  * When you fill in the required data, it populates the best available price rate.
 
 
 # START PROJECT MANUALLY:
