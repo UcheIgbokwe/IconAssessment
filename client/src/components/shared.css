@@ -1,0 +1,10 @@
+.bg-primary {
+  background-color: #FF0000 !important;
+}
+
+.card-body
+ {
+  display: flex;
+  flex-direction: column;
+}
+

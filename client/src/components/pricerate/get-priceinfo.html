@@ -1,0 +1,69 @@
+<template>
+  <require from="../shared.css"></require>
+  <div class="card">
+    <div class="card-header text-white bg-primary">Input Details</div>
+    </div>
+    <div class="card-body">
+      <form role="form" validation-errors.bind="errors">
+
+        <div class="form-group row" validation-errors.bind="widthErrors"
+            class.bind="widthErrors.length ? 'has-error' : ''">
+          <label class="col-md-3 col-form-label" for="width">Width</label>
+          <div class="col-md-9">
+            <input type="number" class="form-control" class.bind="widthErrors.length ? 'has-error' : ''" id="width"
+                    value.bind="width & validate">
+            <span class="help-block" repeat.for="errorInfo of widthErrors">
+              ${errorInfo.error.message}
+            </span> 
+          </div>
+        </div>
+
+        <div class="form-group row" validation-errors.bind="heightErrors"
+            class.bind="heightErrors.length ? 'has-error' : ''">
+          <label class="col-md-3 col-form-label" for="height">Height</label>
+          <div class="col-md-9">
+            <input type="number" class="form-control" class.bind="heightErrors.length ? 'has-error' : ''" id="height"
+                    value.bind="height & validate">
+            <span class="help-block" repeat.for="errorInfo of heightErrors">
+              ${errorInfo.error.message}
+            </span> 
+          </div>
+        </div>
+
+        <div class="form-group row" validation-errors.bind="depthErrors"
+            class.bind="depthErrors.length ? 'has-error' : ''">
+          <label class="col-md-3 col-form-label" for="depth">Depth</label>
+          <div class="col-md-9">
+            <input type="number" class="form-control" class.bind="depthErrors.length ? 'has-error' : ''" id="depth"
+                    value.bind="depth & validate">
+            <span class="help-block" repeat.for="errorInfo of depthErrors">
+              ${errorInfo.error.message}
+            </span> 
+          </div>
+        </div>
+
+        <div class="form-group row" validation-errors.bind="weightErrors"
+            class.bind="weightErrors.length ? 'has-error' : ''">
+          <label class="col-md-3 col-form-label" for="weight">Weight</label>
+          <div class="col-md-9">
+            <input type="number" class="form-control" class.bind="weightErrors.length ? 'has-error' : ''" id="weight"
+                    value.bind="weight & validate">
+            <span class="help-block" repeat.for="errorInfo of weightErrors">
+              ${errorInfo.error.message}
+            </span> 
+          </div>
+        </div>
+      </form>
+      <div>
+        <button class="btn btn-success float-right" click.delegate="create(weight,width,height,depth)" disabled.bind="errors.length">Save</button>
+        <button class="btn btn-primary float-right" click.delegate="reset()" disabled.bind="!width && !height && !depth && !weight">Reset</button>
+      </div>
+    </div>
+  </div>
+  <div class="no-selection text-center">
+    <h4>Dimension Value: ${pricedetails.dimensionValue}</h4>
+    <h4>Weight: ${pricedetails.weight}</h4>
+    <h4>Best Price: ${pricedetails.price}</h4>
+  </div>
+</template>
+

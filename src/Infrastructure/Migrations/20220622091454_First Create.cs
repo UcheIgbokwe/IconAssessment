@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -12,25 +13,26 @@ namespace Infrastructure.Migrations
                 name: "LogisticsDetails",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     WeightKg_Weight = table.Column<double>(type: "float", nullable: true),
                     Dimension_Width = table.Column<double>(type: "float", maxLength: 255, nullable: true),
                     Dimension_Height = table.Column<double>(type: "float", maxLength: 255, nullable: true),
                     Dimension_Depth = table.Column<double>(type: "float", maxLength: 255, nullable: true),
                     Dimension_CalculatedDimension = table.Column<double>(type: "float", maxLength: 255, nullable: true)
                 },
-                constraints: table => table.PrimaryKey("PK_LogisticsDetails", x => x.Id));
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LogisticsDetails", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "User",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LogisticsUserId = table.Column<int>(type: "int", nullable: false)
+                    LogisticsUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {

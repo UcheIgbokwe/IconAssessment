@@ -7,7 +7,7 @@ namespace Domain.LogisticsDetails
 {
     public class LogisticsDetail : IAggregateRoot
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public WeightKg WeightKg { get; set; }
         public Dimension Dimension { get; set; }
         public virtual User User { get; set; }

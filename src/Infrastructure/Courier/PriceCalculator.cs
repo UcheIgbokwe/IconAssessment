@@ -1,5 +1,4 @@
 using Application.Behaviours;
-using Application.Contracts.Domain.DTOs;
 using Application.Contracts.Infrastructure.Courier;
 using Application.Contracts.Infrastructure.Repository;
 using Application.Features.Commands;
@@ -70,6 +69,7 @@ namespace Infrastructure.Courier
         {
             return new LogisticsDetail()
             {
+                Id = Guid.NewGuid(),
                 WeightKg = new WeightKg(response.Weight),
                 Dimension = new Dimension(request.Width, request.Height, request.Depth),
                 User = new User()

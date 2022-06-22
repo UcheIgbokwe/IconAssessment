@@ -1,4 +1,3 @@
-using Application.Contracts.Domain.DTOs;
 using MediatR;
 
 namespace Application.Features.Commands
@@ -9,5 +8,12 @@ namespace Application.Features.Commands
         public double Width { get; set; }
         public double Height { get; set; }
         public double Depth { get; set; }
+    }
+
+    public class PackageResponse
+    {
+        public double DimensionValue { get; set; }
+        public double Weight { get; set; }
+        public decimal Price { get; set; }
     }
 }

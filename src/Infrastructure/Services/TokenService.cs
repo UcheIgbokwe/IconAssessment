@@ -31,7 +31,7 @@ namespace Infrastructure.Services
 
             return result.Item1.ToString();
         }
-        public int? ValidateToken(string token)
+        public string ValidateToken(string token)
         {
             if (token == null)
             return null;
@@ -58,7 +58,7 @@ namespace Infrastructure.Services
 
                 var expiryDate = UnixTimeStampToDateTime(utcExpiryDate);
 
-                var userId = int.Parse(tokenInVerification.Claims.First(x => x.Type == "Id").Value);
+                var userId = tokenInVerification.Claims.First(x => x.Type == "Id").Value;
                 return userId;
             }
             catch (Exception ex)

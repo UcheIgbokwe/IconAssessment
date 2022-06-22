@@ -22,7 +22,7 @@ namespace Infrastructure.Services
             return response;
         }
 
-        public User GetById(int Id)
+        public User GetById(string Id)
         {
             return new User();
         }

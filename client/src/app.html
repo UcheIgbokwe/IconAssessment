@@ -1,0 +1,26 @@
+<template>
+  <require from="./styles.css"></require>
+  <require from="toastr/build/toastr.min.css"></require>
+  <require from="./components/pricerate/get-priceinfo"></require>
+  
+  <nav class="navbar navbar-light bg-light border-bottom fixed-top" role="navigation">
+    <a class="navbar-brand" href="https://www.icon.com.mt/">
+      <img width="101" height="36" alt="Icon MT" 
+        src="https://www.icon.com.mt/wp-content/themes/icon-2020/img/icons/favicon.ico"
+        loading="lazy"
+      >
+      <!-- <span>Price Rates</span> -->
+    </a>
+    <span>Price Rates</span>
+  </nav>
+
+  <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
+
+  <div class="container-md">
+    <div class="row">
+      <getgarage class="col-sm-5 col-md-4"></getgarage>
+      <router-view class="col-sm-7 col-md-8"></router-view>
+    </div>
+  </div>
+</template>
+

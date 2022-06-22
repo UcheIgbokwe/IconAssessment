@@ -1,10 +1,5 @@
-using Application.Contracts.Domain.DTOs;
 using Application.Contracts.Infrastructure.Courier;
 using Application.Contracts.Infrastructure.Repository;
-using Domain.LogisticsDetails;
-using Domain.LogisticsDetails.Dimensions;
-using Domain.LogisticsDetails.WeightInKg;
-using Domain.Users;
 using MediatR;
 
 namespace Application.Features.Commands

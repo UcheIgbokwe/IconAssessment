@@ -6,6 +6,6 @@ namespace Application.Contracts.Infrastructure.Services
     public interface IUserService
     {
         AuthenticateResponse Authenticate(AuthenticateRequest model);
-        User GetById(int Id);
+        User GetById(string Id);
     }
 }

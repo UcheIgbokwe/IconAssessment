@@ -38,6 +38,7 @@ var env = builder.Environment;
     services.AddApplicationServices();
     services.AddInfrastructureServices();
 
+    services.AddMediatR(typeof(GetPriceCommand).GetTypeInfo().Assembly);
     services.AddMediatR(typeof(GetPriceCommandHandler).GetTypeInfo().Assembly);
 
     services.AddValidatorsFromAssemblyContaining(typeof(GetPriceCommandHandler));
