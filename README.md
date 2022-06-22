@@ -1,5 +1,11 @@
 # IconAssessment
 An online tool to check the price of parcels before making orders.
+==================================================================
+
+## CI
+
+![](https://github.com/UcheIgbokwe/IconAssessment/workflows/Build%20Pipeline/badge.svg)
+
 
 AUTHOR - Uche Igbokwe
 
