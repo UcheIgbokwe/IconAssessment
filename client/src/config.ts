@@ -1,7 +1,7 @@
 
 let config = {
 	// Our API is being served
-  baseUrl: 'https://localhost:8000/api/',
+  baseUrl: 'http://localhost:8000/api/',
   // The API specifies that token is generated  at the POST /authenticate endpoint
   loginUrl: 'Account/authenticate',
   // The API serves its tokens with a key of token which differs from

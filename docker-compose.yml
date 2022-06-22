@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  parkbee.api:
+  icon.api:
     build:
       context: .
       dockerfile: src/API/Dockerfile

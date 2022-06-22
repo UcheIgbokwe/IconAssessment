@@ -5,7 +5,7 @@ import * as toastr from 'toastr';
 
 @autoinject()
 export class Welcome {
-  message: string = 'Click button to begin';
+  message: string = 'Click button to login';
   firstName: string = 'John';
   lastName: string = 'Doe';
 

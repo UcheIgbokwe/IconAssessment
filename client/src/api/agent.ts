@@ -7,7 +7,7 @@ export class IconAPI{
   isRequesting = false;
 
   constructor(private http: HttpClient) {
-    const baseUrl = 'https://localhost:8000/api/';
+    const baseUrl = 'http://localhost:8000/api/';
 
     http.configure(config => {
       config.withBaseUrl(baseUrl);

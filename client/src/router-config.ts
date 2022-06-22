@@ -18,7 +18,7 @@ export default class {
       config.options.root = '/';
 	    config.map([
         { route: ['', 'login'], name: 'login',   moduleId: PLATFORM.moduleName('./components/login/welcome'),  title: 'Login' },
-        { route: ['welcome'],   name: 'priceinfo',  moduleId: PLATFORM.moduleName('./components/pricerate/get-priceinfo'), title:'Price Rates' }, 
+        { route: ['welcome'],   name: 'priceinfo',  moduleId: PLATFORM.moduleName('./components/pricerate/get-priceinfo'), title:'Price Rates',  auth: true}, 
       ]);
 	  };
 

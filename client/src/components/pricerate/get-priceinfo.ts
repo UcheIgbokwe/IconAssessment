@@ -56,7 +56,6 @@ export class PriceDetailClass {
     .then((validate) => {
       if(validate.valid) {
         return this.api.getPriceRates(newPriceDetails).then(pricedetails => {
-          console.log(pricedetails);
           this.pricedetails = <PriceDetails>pricedetails;
           this.originalPriceDetails = JSON.parse(JSON.stringify(this.pricedetails));
           this.ea.publish(new PriceRateCreated(this.pricedetails));
